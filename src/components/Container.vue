@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="index">#{{ indexInParent() }}</div>
+    <div class="index">#{{ index }}</div>
     <header>
       <slot name="header" :title="title">
         <h2>{{ title }}</h2>
@@ -32,8 +32,8 @@ export default {
       `,
     },
   },
-  methods: {
-    indexInParent() {
+  computed: {
+    index() {
       return this.$parent.$children.length - 1;
     },
   },
